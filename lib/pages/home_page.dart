@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers
 
 import "package:flutter/material.dart";
+import 'package:mentalhelthapp/pages/exrcices_tile.dart';
 import 'package:mentalhelthapp/widgets/emoticon_face.dart';
 
 class HomePage extends StatefulWidget {
@@ -168,12 +169,12 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Colors.grey[300],
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(12.0),
                       topLeft: Radius.circular(12.0)),
                 ),
-                padding: EdgeInsets.all(25),
+                padding: EdgeInsets.all(15),
                 child: Center(
                   child: Column(
                     children: [
@@ -191,6 +192,38 @@ class _HomePageState extends State<HomePage> {
                           Icon(Icons.more_horiz),
                         ],
                       ),
+                      SizedBox(height: 15),
+                      // listview of exrcices
+                      Expanded(
+                        child: ListView(
+                          children: [
+                            ExrciceTile(
+                              color: Colors.blue,
+                              icon: Icons.star,
+                              exerciseName: "Football",
+                              numberOfExrises: 15,
+                            ),
+                            ExrciceTile(
+                              color: Colors.red,
+                              icon: Icons.favorite,
+                              exerciseName: "Death lift",
+                              numberOfExrises: 15,
+                            ),
+                            ExrciceTile(
+                              color: Colors.orange,
+                              icon: Icons.mail,
+                              exerciseName: "Death lift",
+                              numberOfExrises: 15,
+                            ),
+                            ExrciceTile(
+                              color: Colors.amber,
+                              icon: Icons.display_settings_rounded,
+                              exerciseName: "Death lift",
+                              numberOfExrises: 15,
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
